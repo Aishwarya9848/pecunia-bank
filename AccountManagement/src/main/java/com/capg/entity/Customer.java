@@ -7,11 +7,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="Customer")
+@Entity //mark class as an Entity   
+@Table(name="Customer")  //defining class name as Table name  
 public class Customer  {
-	@Id
-	@Column(length=12)
+	@Id  
+	@Column(length=12)   //specifies the details of the column
 	private String aadharNumber;
 	@Column(length=15)
 	private String customerName;

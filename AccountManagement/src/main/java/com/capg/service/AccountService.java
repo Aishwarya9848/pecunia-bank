@@ -1,5 +1,10 @@
 package com.capg.service;
 
-public class AccountService {
+import com.capg.entity.Customer;
 
+
+
+public interface AccountService {
+	Customer addAccount(Customer customer);
+	
 }
