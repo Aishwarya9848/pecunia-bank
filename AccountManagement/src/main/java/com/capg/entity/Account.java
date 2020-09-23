@@ -1,44 +1,49 @@
 package com.capg.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-@Entity //mark class as an Entity   
-@Table(name="Account")	//defining class name as Table name  
+//mark class as an Entity  
+@Entity
+//defining class name as Table name  
+@Table(name="Account")	
 public class Account {
-	@Id   ////Defining accountId as primary key  
+	//Defining accountId as primary key 
+	@Id   
 	@Column(length=12)  //length of column      
-	private long accountId;
+	private String accountId;
 	@Column(length=8)
-	private long amount;
-	@Column
-	private int lastTransaction;
+	private Long amount;
+	@Column(length=20)
+	private Date lastUpdated;
 	
-	
-	
-	
-	
-	public int getLastTransaction() {
-		return lastTransaction;
+	//generating getters and setters
+	public Date getLastUpdated() {
+		return lastUpdated;
 	}
-	public void setLastTransaction(int lastTransaction) {
-		this.lastTransaction = lastTransaction;
+	public void setLastUpdated(Date lastUpdated) {
+		this.lastUpdated = lastUpdated;
 	}
-	public long getAccountId() {
+	public String getAccountId() {
 		return accountId;
 	}
-	public void setAccountId(long accountId) {
+	public void setAccountId(String accountId) {
 		this.accountId = accountId;
 	}
 	
-	
-	public long getAmount() {
+	public Long getAmount() {
 		return amount;
 	}
-	public void setAmount(long amount) {
+	public void setAmount(Long amount) {
 		this.amount = amount;
 	}
+	
+	
+	
+	
+	
 	
 }

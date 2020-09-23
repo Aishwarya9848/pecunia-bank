@@ -5,6 +5,11 @@ import com.capg.entity.Customer;
 
 
 public interface AccountService {
-	Customer addAccount(Customer customer);
-	
+	String addAccount(Customer customer);
+
+	Customer findByAccountId(String accountId);
+
+	String updateAccount(String accountId, String customerName, String contactNumber, String address);
+
+	String deleteAccount(String accountId);
 }

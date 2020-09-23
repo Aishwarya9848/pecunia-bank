@@ -1,5 +1,6 @@
 package com.capg.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,15 +8,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity //mark class as an Entity   
-@Table(name="Customer")  //defining class name as Table name  
+import com.capg.entity.Account;
+//mark class as an Entity  
+@Entity
+//defining class name as Table name  
+@Table(name="Customer")
 public class Customer  {
-	@Id  
-	@Column(length=12)   //specifies the details of the column
+	//Defining aadharNumber as primary key 
+	@Id
+	@Column(length=12) //specifies column details
 	private String aadharNumber;
-	@Column(length=15)
+	@Column(length=20)  //length of the column
 	private String customerName;
-	@Column(length=10)
+	@Column(length=15)
 	private String contactNumber;
 	@Column(length=15)
 	private String panNumber;
@@ -23,14 +28,16 @@ public class Customer  {
 	private String dateOfBirth;
 	@Column(length=6)
 	private String gender;
+	@Column(length=15)
 	private String address;
 	
-	@OneToOne(targetEntity=Account.class)
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="accountId")
 	private Account account;
 	
 	
-	
+	//generating getters and setters
 	public Account getAccount() {
 		return account;
 	}
